@@ -3,6 +3,7 @@ import { AiFillHome } from "react-icons/ai";
 import { BsInfoCircleFill } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Link from "next/link";
+import DarkModeSwitch from "./DarkModeSwitch";
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
       <div className="flex justify-between items-center py-3 max-w-7xl sm:m-auto px-2 ">
         <div className="flex gap-5 items-center lg:flex-row-reverse">
           <Link href="#" className="text-white flex items-center">
-            <GiHamburgerMenu className="mr-2"></GiHamburgerMenu>
+            <GiHamburgerMenu className="mr-2 text-2xl"></GiHamburgerMenu>
             <span>MENU</span>
           </Link>
           <Link href="/" className="text-2xl">
@@ -20,13 +21,17 @@ const Header = () => {
             <span className="hidden sm:inline text-white">Clone</span>
           </Link>
         </div>
-        <div className="flex gap-5 text-white">
+        <div>
+            <input type="text" />
+        </div>
+        <div className="flex gap-5 text-white items-center">
           <MenuItems title="HOME" address="/" Icon={AiFillHome}></MenuItems>
           <MenuItems
             title="ABOUT"
             address="/about"
             Icon={BsInfoCircleFill}
           ></MenuItems>
+          <DarkModeSwitch/>
         </div>
       </div>
     </div>
